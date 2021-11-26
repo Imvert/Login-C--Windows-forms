@@ -49,16 +49,22 @@ namespace loginClase
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Usuario Registrado !!!");
+                    limpiar();
                 }
                 catch(Exception ex) 
                 {
-                    throw;
+                    MessageBox.Show("Usuario no registrado !!!"+ ex.Message);
+
                 }
             }
 
         }
 
-       
+        private void limpiar()
+        {
+            txt_cedula.Text = txt_contraseña.Text = txt_correo.Text = txt_direccion.Text = txt_nick.Text =txt_nombre.Text = ""; 
+            cmb_perfil.Text = "Seleccione";
+        }
 
         private void Registrar_Load_1(object sender, EventArgs e)
         {
